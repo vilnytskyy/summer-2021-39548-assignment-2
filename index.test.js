@@ -1,9 +1,9 @@
-// Unit Testing Example from https://www.freecodecamp.org/news/how-to-start-unit-testing-javascript/
+// Load index.js
+require("./index");
 
 // FOR EACH TESTS //
 console.log("/// forEach vs myEach ///")
 const arr1 = [1, 2, , 3];
-const myEach = require("./index");
 
 // Test 1: Even
 console.log("/1/ Test 1: Even /1/")
@@ -35,10 +35,9 @@ arr1.myEach(logArrayElements);
 console.log("/2/ Test 2: Print Elements /2/")
 console.log("/// forEach vs myEach ///")
 
-// MAP TESTS //
+// // MAP TESTS //
 console.log("/// map vs myMap ///")
 const arr3 = [1, 4, 9, , 16];
-const myMap = require("./index");
 
 // Test 1: X2
 console.log("/1/ Test 1: X2 /1/")
@@ -75,6 +74,45 @@ console.log("/2/ Test 2: Reformat Array /2/")
 console.log("/// map vs myMap ///")
 
 // FILTER TESTS //
+console.log("/// filter vs myFilter ///")
+
+// Test 1: Word Limit
+console.log("/1/ Test 1: Word Limit /1/")
+
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const limit = word => word.length > 6;
+
+console.log("filter: ")
+console.log(words.filter(limit));
+
+console.log("myFilter: ")
+console.log(words.myFilter(limit));
+
+console.log("/1/ Test 1: Word Limit /1/")
+
+// Test 2: Prime Numbers
+console.log("/2/ Test 2: Prime Numbers /2/")
+
+const arr4 = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+// func found on the MDN Web Docs page for filter
+function isPrime(num) {
+    for (let i = 2; num > i; i++) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+    return num > 1;
+}
+
+console.log("filter: ")
+console.log(arr4.filter(isPrime));
+
+console.log("myFilter: ")
+console.log(arr4.myFilter(isPrime));
+
+console.log("/2/ Test 2: Prime Numbers /2/")
+console.log("/// filter vs myFilter ///")
 
 // SOME TESTS //
 
@@ -88,8 +126,6 @@ console.log("/// map vs myMap ///")
 
 // PUSH TESTS //
 console.log("/// push vs myPush ///");
-
-const myPush = require("./index");
 
 // Test 1: Add Elements
 console.log("/1/ Test 1: Add Elements /1/");
