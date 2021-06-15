@@ -8,8 +8,14 @@ Array.prototype.myEach = function (callbackFn) {
 };
 
 // MAP //
-Array.prototype.myMap = function () {
+Array.prototype.myMap = function (callbackFn) {
+    let arr = [];
 
+    for (let i = 0; i < this.length; i++) {
+        arr[i] = callbackFn(this[i], i, this);
+    }
+
+    return arr;
 };
 
 // FILTER //
