@@ -1,75 +1,71 @@
-// FOR EACH //
-Array.prototype.myEach = function() {
+// FOR EACH // Provided by Professor Lynch
+Array.prototype.myEach = function (callbackFn) {
+    for (let i = 0; i < this.length; i++) {
+        if (this[i] === undefined) continue;
 
+        callbackFn(this[i], i, this);
+    }
 };
 
 // MAP //
-Array.prototype.myMap = function() {
+Array.prototype.myMap = function () {
 
 };
 
 // FILTER //
-Array.prototype.myFilter = function() {
+Array.prototype.myFilter = function () {
 
 };
 
 // SOME //
-Array.prototype.mySome = function() {
+Array.prototype.mySome = function () {
 
 };
 
 // EVERY //
-Array.prototype.myEvery = function() {
+Array.prototype.myEvery = function () {
 
 };
 
 // REDUCE //
-Array.prototype.myReduce = function() {
+Array.prototype.myReduce = function () {
 
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function() {
+Array.prototype.myIncludes = function () {
 
 };
 
 // INDEXOF //
-Array.prototype.myIndexOf = function() {
+Array.prototype.myIndexOf = function () {
 
 };
 
-// PUSH //
-Array.prototype.myPush = function() {
+// PUSH // Provided by Professor Lynch
+Array.prototype.myPush = function (...args) {
+    let arg_i = 0;
+    let length = this.length;
 
+    for (let i = length; i < length + args.length; i++) {
+        this[i] = args[arg_i];
+        arg_i++;
+    }
+
+    return this.length;
 };
 
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function() {
+Array.prototype.myLastIndexOf = function () {
 
 };
 
 // KEYS //
-Object.grabKeys = function() {
+Object.grabKeys = function () {
 
 };
 
 // VALUES //
-Object.grabValues = function() {
+Object.grabValues = function () {
 
 };
-
-
-// Unit Testing Example from https://www.freecodecamp.org/news/how-to-start-unit-testing-javascript/
-
-// const englishCode = "en-US";
-// const spanishCode = "es-ES";
-// function getAboutUsLink(language){
-//     switch (language.toLowerCase()){
-//       case englishCode.toLowerCase():
-//         return '/about-us';
-//       case spanishCode.toLowerCase():
-//         return '/acerca-de';
-//     }
-//     return '';
-// }
-// module.exports = getAboutUsLink;
