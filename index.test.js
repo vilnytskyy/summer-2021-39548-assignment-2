@@ -36,6 +36,43 @@ console.log("/2/ Test 2: Print Elements /2/")
 console.log("/// forEach vs myEach ///")
 
 // MAP TESTS //
+console.log("/// map vs myMap ///")
+const arr3 = [1, 4, 9, , 16];
+const myMap = require("./index");
+
+// Test 1: X2
+console.log("/1/ Test 1: X2 /1/")
+
+const times2 = x => x * 2;
+
+console.log("map: ")
+console.log(arr3.map(times2));
+
+console.log("myMap: ")
+console.log(arr3.myMap(times2));
+
+console.log("/1/ Test 1: X2 /1/")
+
+// Test 2: Reformat Array
+console.log("/2/ Test 2: Reformat Array /2/")
+
+let kvArray = [{ key: 1, value: 10 }, { key: 2, value: 20 }, { key: 3, value: 30 }]
+
+// func found on the MDN Web Docs page for map
+const reformatArray = (obj => {
+    let rObj = {}
+    rObj[obj.key] = obj.value
+    return rObj
+})
+
+console.log("map: ")
+console.log(kvArray.map(reformatArray));
+
+console.log("myMap: ")
+console.log(kvArray.myMap(reformatArray));
+
+console.log("/2/ Test 2: Reformat Array /2/")
+console.log("/// map vs myMap ///")
 
 // FILTER TESTS //
 
