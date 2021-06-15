@@ -35,6 +35,8 @@ require("./index");
 // console.log("/2/ Test 2: Print Elements /2/")
 // console.log("/// forEach vs myEach ///")
 
+
+
 // // // MAP TESTS //
 // console.log("/// map vs myMap ///")
 // const arr3 = [1, 4, 9, , 16];
@@ -72,6 +74,8 @@ require("./index");
 
 // console.log("/2/ Test 2: Reformat Array /2/")
 // console.log("/// map vs myMap ///")
+
+
 
 // // FILTER TESTS //
 // console.log("/// filter vs myFilter ///")
@@ -114,8 +118,10 @@ require("./index");
 // console.log("/2/ Test 2: Prime Numbers /2/")
 // console.log("/// filter vs myFilter ///")
 
+
+
 // SOME TESTS //
-console.log("/// some vs mySome ///")
+// console.log("/// some vs mySome ///")
 
 // Test 1: Even
 console.log("/1/ Test 1: Even /1/")
@@ -130,17 +136,71 @@ console.log(arr5.some(even));
 console.log("mySome: ")
 console.log(arr5.mySome(even));
 
-console.log("/1/ Test 1: Word Limit /1/")
+console.log("/1/ Test 1: Even /1/")
+
+// Test 2: Even 2
+console.log("/2/ Test 2: Even 2 /2/")
+
+const arr5b = [1, 5, 7, 3, 9, 13];
+
+console.log("some: ")
+console.log(arr5b.some(even));
+
+console.log("mySome: ")
+console.log(arr5b.mySome(even));
+
+console.log("/2/ Test 2: Even 2 /2/")
 
 console.log("/// some vs mySome ///")
 
+
+
 // EVERY TESTS //
+console.log("/// every vs myEvery ///")
+
+// Test 1: Threshold
+console.log("/1/ Test 1: Threshold /1/")
+
+const arr6 = [1, 30, 39, 29, 10, 13];
+
+const isBelowThreshold = (currentValue) => currentValue < 40;
+
+console.log("every: ")
+console.log(arr6.every(isBelowThreshold));
+
+console.log("myEvery: ")
+console.log(arr6.myEvery(isBelowThreshold));
+
+console.log("/1/ Test 1: Threshold /1/")
+
+// Test 2: Threshold 2
+console.log("/2/ Test 2: Threshold 2 /2/")
+
+const arr6b = [1, 30, 40, 29, 10, 13];
+
+console.log("every: ")
+console.log(arr6b.every(isBelowThreshold));
+
+console.log("myEvery: ")
+console.log(arr6b.myEvery(isBelowThreshold));
+
+console.log("/2/ Test 2: Threshold 2 /2/")
+
+console.log("/// every vs myEvery ///")
+
+
 
 // REDUCE TESTS //
 
+
+
 // INCLUDES TESTS //
 
+
+
 // INDEXOF TESTS //
+
+
 
 // // PUSH TESTS //
 // console.log("/// push vs myPush ///");
@@ -179,8 +239,16 @@ console.log("/// some vs mySome ///")
 // console.log("/2/ Test 2: Merge Arrays /2/");
 // console.log("/// push vs myPush ///");
 
+
+
 // LASTINDEXOF TESTS //
+
+
 
 // KEYS TESTS //
 
+
+
 // VALUES TESTS //
+
+

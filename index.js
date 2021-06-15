@@ -24,7 +24,7 @@ Array.prototype.myFilter = function (callbackFn) {
     let arr_i = 0;
 
     for (let i = 0; i < this.length; i++) {
-        if(callbackFn(this[i], i, this)){
+        if (callbackFn(this[i], i, this)) {
             arr[arr_i] = this[i];
             arr_i++;
         }
@@ -36,7 +36,7 @@ Array.prototype.myFilter = function (callbackFn) {
 // SOME //
 Array.prototype.mySome = function (callbackFn) {
     for (let i = 0; i < this.length; i++) {
-        if(callbackFn(this[i], i, this)){
+        if (callbackFn(this[i], i, this)) {
             return true;
         }
     }
@@ -45,8 +45,14 @@ Array.prototype.mySome = function (callbackFn) {
 };
 
 // EVERY //
-Array.prototype.myEvery = function () {
+Array.prototype.myEvery = function (callbackFn) {
+    for (let i = 0; i < this.length; i++) {
+        if (!callbackFn(this[i], i, this)) {
+            return false;
+        }
+    }
 
+    return true;
 };
 
 // REDUCE //
