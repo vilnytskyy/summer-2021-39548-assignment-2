@@ -123,74 +123,137 @@ require("./index");
 // SOME TESTS //
 // console.log("/// some vs mySome ///")
 
-// Test 1: Even
-console.log("/1/ Test 1: Even /1/")
+// // Test 1: Even
+// console.log("/1/ Test 1: Even /1/")
 
-const arr5 = [1, 2, 3, 4, 5];
+// const arr5 = [1, 2, 3, 4, 5];
 
-const even = (element) => element % 2 === 0;
+// const even = (element) => element % 2 === 0;
 
-console.log("some: ")
-console.log(arr5.some(even));
+// console.log("some: ")
+// console.log(arr5.some(even));
 
-console.log("mySome: ")
-console.log(arr5.mySome(even));
+// console.log("mySome: ")
+// console.log(arr5.mySome(even));
 
-console.log("/1/ Test 1: Even /1/")
+// console.log("/1/ Test 1: Even /1/")
 
-// Test 2: Even 2
-console.log("/2/ Test 2: Even 2 /2/")
+// // Test 2: Even 2
+// console.log("/2/ Test 2: Even 2 /2/")
 
-const arr5b = [1, 5, 7, 3, 9, 13];
+// const arr5b = [1, 5, 7, 3, 9, 13];
 
-console.log("some: ")
-console.log(arr5b.some(even));
+// console.log("some: ")
+// console.log(arr5b.some(even));
 
-console.log("mySome: ")
-console.log(arr5b.mySome(even));
+// console.log("mySome: ")
+// console.log(arr5b.mySome(even));
 
-console.log("/2/ Test 2: Even 2 /2/")
+// console.log("/2/ Test 2: Even 2 /2/")
 
-console.log("/// some vs mySome ///")
+// console.log("/// some vs mySome ///")
 
 
 
 // EVERY TESTS //
-console.log("/// every vs myEvery ///")
+// console.log("/// every vs myEvery ///")
 
-// Test 1: Threshold
-console.log("/1/ Test 1: Threshold /1/")
+// // Test 1: Threshold
+// console.log("/1/ Test 1: Threshold /1/")
 
-const arr6 = [1, 30, 39, 29, 10, 13];
+// const arr6 = [1, 30, 39, 29, 10, 13];
 
-const isBelowThreshold = (currentValue) => currentValue < 40;
+// const isBelowThreshold = (currentValue) => currentValue < 40;
 
-console.log("every: ")
-console.log(arr6.every(isBelowThreshold));
+// console.log("every: ")
+// console.log(arr6.every(isBelowThreshold));
 
-console.log("myEvery: ")
-console.log(arr6.myEvery(isBelowThreshold));
+// console.log("myEvery: ")
+// console.log(arr6.myEvery(isBelowThreshold));
 
-console.log("/1/ Test 1: Threshold /1/")
+// console.log("/1/ Test 1: Threshold /1/")
 
-// Test 2: Threshold 2
-console.log("/2/ Test 2: Threshold 2 /2/")
+// // Test 2: Threshold 2
+// console.log("/2/ Test 2: Threshold 2 /2/")
 
-const arr6b = [1, 30, 40, 29, 10, 13];
+// const arr6b = [1, 30, 40, 29, 10, 13];
 
-console.log("every: ")
-console.log(arr6b.every(isBelowThreshold));
+// console.log("every: ")
+// console.log(arr6b.every(isBelowThreshold));
 
-console.log("myEvery: ")
-console.log(arr6b.myEvery(isBelowThreshold));
+// console.log("myEvery: ")
+// console.log(arr6b.myEvery(isBelowThreshold));
 
-console.log("/2/ Test 2: Threshold 2 /2/")
+// console.log("/2/ Test 2: Threshold 2 /2/")
 
-console.log("/// every vs myEvery ///")
+// console.log("/// every vs myEvery ///")
 
 
 
 // REDUCE TESTS //
+console.log("/// reduce vs myReduce ///")
+
+// Test 1: Reducer
+console.log("/1/ Test 1: Reducer /1/")
+
+const arr7 = [, 2, , 4];
+
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+console.log("reduce: ")
+console.log(arr7.reduce(reducer));
+
+console.log("myReduce: ")
+console.log(arr7.myReduce(reducer));
+
+console.log("/1/ Test 1: Reducer /1/")
+
+// Test 2: InitialVal
+console.log("/2/ Test 2: InitialVal /2/")
+
+console.log("reduce: ")
+console.log(arr7.reduce(reducer, 5));
+
+console.log("myReduce: ")
+console.log(arr7.myReduce(reducer, 5));
+
+
+console.log("/2/ Test 2: InitialVal /2/")
+
+// Test 3: Error
+console.log("/3/ Test 3: Error /3/")
+
+const arr7b = [];
+
+console.log("reduce: ")
+try {
+    arr7b.reduce(reducer);
+} catch (error) {
+    console.log("Caught Error!");
+}
+
+console.log("myReduce: ")
+try {
+    arr7b.myReduce(reducer);
+} catch (error) {
+    console.log("Caught Error!");
+}
+
+console.log("/3/ Test 3: Error /3/")
+
+// Test 4: Empty Arr w/ IntialVal
+console.log("/4/ Test 4: Empty Arr w/ IntialVal /4/")
+
+console.log("reduce: ")
+console.log(arr7b.reduce(reducer, 5));
+
+console.log("myReduce: ")
+console.log(arr7b.myReduce(reducer, 5));
+
+console.log("/4/ Test 4: Empty Arr w/ IntialVal /4/")
+
+
+console.log("/// reduce vs myReduce ///")
 
 
 
