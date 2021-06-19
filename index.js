@@ -141,7 +141,7 @@ Array.prototype.myIncludes = function (searchElement, fromIndex) {
     }
 
     for (let i = startIndex; i < this.length; i++) {
-        if (this[i] === searchElement) {
+        if (this[i] === searchElement || Number.isNaN(this[i])) {
             return true;
         }
     }
