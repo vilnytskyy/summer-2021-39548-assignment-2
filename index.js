@@ -239,8 +239,16 @@ Array.prototype.myLastIndexOf = function (searchElement, fromIndex) {
 
 
 // KEYS //
-Object.grabKeys = function () {
+Object.grabKeys = function (obj) {
+    let arr = [];
+    let i = 0;
 
+    for (const property in obj) {
+        arr[i] = property;
+        i++;
+    }
+
+    return arr;
 };
 
 
