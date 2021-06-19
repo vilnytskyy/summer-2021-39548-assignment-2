@@ -150,8 +150,33 @@ Array.prototype.myIncludes = function (searchElement, fromIndex) {
 };
 
 // INDEXOF //
-Array.prototype.myIndexOf = function () {
+Array.prototype.myIndexOf = function (searchElement, fromIndex) {
+    let startIndex = 0;
 
+    // Check if fromIndex is provided
+    if (fromIndex !== undefined) {
+        if (fromIndex >= this.length) {
+            return -1;
+        }
+
+        if (fromIndex < 0) {
+            startIndex = this.length + fromIndex;
+
+            if (startIndex <= -1 * this.length) {
+                startIndex = 0;
+            }
+        } else {
+            startIndex += fromIndex;
+        }
+    }
+
+    for (let i = startIndex; i < this.length; i++) {
+        if (this[i] === searchElement) {
+            return i;
+        }
+    }
+
+    return -1;
 };
 
 // PUSH // Provided by Professor Lynch
