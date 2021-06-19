@@ -7,6 +7,8 @@ Array.prototype.myEach = function (callbackFn) {
     }
 };
 
+
+
 // MAP //
 Array.prototype.myMap = function (callbackFn) {
     let arr = [];
@@ -17,6 +19,8 @@ Array.prototype.myMap = function (callbackFn) {
 
     return arr;
 };
+
+
 
 // FILTER //
 Array.prototype.myFilter = function (callbackFn) {
@@ -35,6 +39,8 @@ Array.prototype.myFilter = function (callbackFn) {
     return arr;
 };
 
+
+
 // SOME //
 Array.prototype.mySome = function (callbackFn) {
     for (let i = 0; i < this.length; i++) {
@@ -48,6 +54,8 @@ Array.prototype.mySome = function (callbackFn) {
     return false;
 };
 
+
+
 // EVERY //
 Array.prototype.myEvery = function (callbackFn) {
     for (let i = 0; i < this.length; i++) {
@@ -60,6 +68,8 @@ Array.prototype.myEvery = function (callbackFn) {
 
     return true;
 };
+
+
 
 // REDUCE //
 Array.prototype.myReduce = function (callbackFn, initialValue) {
@@ -119,6 +129,8 @@ Array.prototype.myReduce = function (callbackFn, initialValue) {
     return total;
 };
 
+
+
 // INCLUDES //
 Array.prototype.myIncludes = function (searchElement, fromIndex) {
     let startIndex = 0;
@@ -148,6 +160,8 @@ Array.prototype.myIncludes = function (searchElement, fromIndex) {
 
     return false;
 };
+
+
 
 // INDEXOF //
 Array.prototype.myIndexOf = function (searchElement, fromIndex) {
@@ -179,6 +193,8 @@ Array.prototype.myIndexOf = function (searchElement, fromIndex) {
     return -1;
 };
 
+
+
 // PUSH // Provided by Professor Lynch
 Array.prototype.myPush = function (...args) {
     let arg_i = 0;
@@ -192,15 +208,42 @@ Array.prototype.myPush = function (...args) {
     return this.length;
 };
 
-// LASTINDEXOF //
-Array.prototype.myLastIndexOf = function () {
 
+
+// LASTINDEXOF //
+Array.prototype.myLastIndexOf = function (searchElement, fromIndex) {
+    let startIndex = this.length - 1;
+
+    // Check if fromIndex is provided
+    if (fromIndex !== undefined) {
+        if (fromIndex < 0) {
+            startIndex = this.length + fromIndex;
+
+            if (startIndex < 0) {
+                return -1;
+            }
+        } else if (fromIndex < this.length) {
+            startIndex = fromIndex;
+        }
+    }
+
+    for (let i = startIndex; i > -1; i--) {
+        if (this[i] === searchElement) {
+            return i;
+        }
+    }
+
+    return -1;
 };
+
+
 
 // KEYS //
 Object.grabKeys = function () {
 
 };
+
+
 
 // VALUES //
 Object.grabValues = function () {
