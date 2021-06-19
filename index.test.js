@@ -191,74 +191,119 @@ require("./index");
 
 
 // REDUCE TESTS //
-console.log("/// reduce vs myReduce ///")
+// console.log("/// reduce vs myReduce ///")
 
-// Test 1: Reducer
-console.log("/1/ Test 1: Reducer /1/")
+// // Test 1: Reducer
+// console.log("/1/ Test 1: Reducer /1/")
 
-const arr7 = [, 2, , 4];
+// const arr7 = [ 1, 2, 3, 4];
 
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
+// const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
-console.log("reduce: ")
-console.log(arr7.reduce(reducer));
+// console.log("reduce: ")
+// console.log(arr7.reduce(reducer));
 
-console.log("myReduce: ")
-console.log(arr7.myReduce(reducer));
+// console.log("myReduce: ")
+// console.log(arr7.myReduce(reducer));
 
-console.log("/1/ Test 1: Reducer /1/")
+// console.log("/1/ Test 1: Reducer /1/")
 
-// Test 2: InitialVal
-console.log("/2/ Test 2: InitialVal /2/")
+// // Test 2: InitialVal
+// console.log("/2/ Test 2: InitialVal /2/")
 
-console.log("reduce: ")
-console.log(arr7.reduce(reducer, 5));
+// console.log("reduce: ")
+// console.log(arr7.reduce(reducer, 5));
 
-console.log("myReduce: ")
-console.log(arr7.myReduce(reducer, 5));
-
-
-console.log("/2/ Test 2: InitialVal /2/")
-
-// Test 3: Error
-console.log("/3/ Test 3: Error /3/")
-
-const arr7b = [];
-
-console.log("reduce: ")
-try {
-    arr7b.reduce(reducer);
-} catch (error) {
-    console.log("Caught Error!");
-}
-
-console.log("myReduce: ")
-try {
-    arr7b.myReduce(reducer);
-} catch (error) {
-    console.log("Caught Error!");
-}
-
-console.log("/3/ Test 3: Error /3/")
-
-// Test 4: Empty Arr w/ IntialVal
-console.log("/4/ Test 4: Empty Arr w/ IntialVal /4/")
-
-console.log("reduce: ")
-console.log(arr7b.reduce(reducer, 5));
-
-console.log("myReduce: ")
-console.log(arr7b.myReduce(reducer, 5));
-
-console.log("/4/ Test 4: Empty Arr w/ IntialVal /4/")
+// console.log("myReduce: ")
+// console.log(arr7.myReduce(reducer, 5));
 
 
-console.log("/// reduce vs myReduce ///")
+// console.log("/2/ Test 2: InitialVal /2/")
+
+// // Test 3: Error
+// console.log("/3/ Test 3: Error /3/")
+
+// const arr7b = [];
+
+// console.log("reduce: ")
+// try {
+//     arr7b.reduce(reducer);
+// } catch (error) {
+//     console.log("Caught Error!");
+// }
+
+// console.log("myReduce: ")
+// try {
+//     arr7b.myReduce(reducer);
+// } catch (error) {
+//     console.log("Caught Error!");
+// }
+
+// console.log("/3/ Test 3: Error /3/")
+
+// // Test 4: Empty Arr w/ IntialVal
+// console.log("/4/ Test 4: Empty Arr w/ IntialVal /4/")
+
+// console.log("reduce: ")
+// console.log(arr7b.reduce(reducer, 5));
+
+// console.log("myReduce: ")
+// console.log(arr7b.myReduce(reducer, 5));
+
+// console.log("/4/ Test 4: Empty Arr w/ IntialVal /4/")
+
+
+// console.log("/// reduce vs myReduce ///")
 
 
 
 // INCLUDES TESTS //
+console.log("/// includes vs myIncludes ///")
 
+// Test 1: Includes
+console.log("/1/ Test 1: Includes /1/")
+
+console.log("includes: ")
+console.log([1, 2, 3].includes(2))         // true
+console.log([1, 2, 3].includes(4))         // false
+console.log([1, 2, 3].includes(3, 3))      // false
+console.log([1, 2, 3].includes(3, -1))     // true
+console.log([1, 2, NaN].includes(NaN))     // true
+console.log(["1", "2", "3"].includes(3))   // false
+
+console.log("myIncludes: ")
+console.log([1, 2, 3].myIncludes(2))         // true
+console.log([1, 2, 3].myIncludes(4))         // false
+console.log([1, 2, 3].myIncludes(3, 3))      // false
+console.log([1, 2, 3].myIncludes(3, -1))     // true
+console.log([1, 2, NaN].myIncludes(NaN))     // true
+console.log(["1", "2", "3"].myIncludes(3))   // false
+
+console.log("/1/ Test 1: Includes /1/")
+
+// Test 2: Index
+console.log("/2/ Test 2: Index /2/")
+let arrTest = ['a', 'b', 'c']
+
+console.log("includes: ")
+console.log(arrTest.includes('c', 3))    // false
+console.log(arrTest.includes('c', 100))  // false
+console.log(arrTest.includes('a', -100)) // true
+console.log(arrTest.includes('b', -100)) // true
+console.log(arrTest.includes('c', -100)) // true
+console.log(arrTest.includes('a', -2))   // false
+
+console.log("myIncludes: ")
+console.log(arrTest.myIncludes('c', 3))    // false
+console.log(arrTest.myIncludes('c', 100))  // false
+console.log(arrTest.myIncludes('a', -100)) // true
+console.log(arrTest.myIncludes('b', -100)) // true
+console.log(arrTest.myIncludes('c', -100)) // true
+console.log(arrTest.myIncludes('a', -2))   // false
+
+console.log("/2/ Test 2: Index /2/")
+
+console.log("/// includes vs myIncludes ///")
 
 
 // INDEXOF TESTS //
