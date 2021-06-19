@@ -246,6 +246,14 @@ Object.grabKeys = function () {
 
 
 // VALUES //
-Object.grabValues = function () {
+Object.grabValues = function (obj) {
+    let arr = [];
+    let i = 0;
 
+    for (const property in obj) {
+        arr[i] = obj[property];
+        i++;
+    }
+
+    return arr;
 };

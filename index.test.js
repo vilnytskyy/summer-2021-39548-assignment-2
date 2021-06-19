@@ -379,34 +379,56 @@ require("./index");
 
 
 
-// LASTINDEXOF TESTS //
-console.log("/// lastIndexOf vs myLastIndexOf ///");
+// // LASTINDEXOF TESTS //
+// console.log("/// lastIndexOf vs myLastIndexOf ///");
 
-// Test 1: Animals + Nums
-console.log("/1/ Test 1: Animals + Nums /1/");
-const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
-const arrLstIdxTest = [2, 5, 9, 2];
+// // Test 1: Animals + Nums
+// console.log("/1/ Test 1: Animals + Nums /1/");
+// const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
+// const arrLstIdxTest = [2, 5, 9, 2];
 
-console.log("lastIndexOf vs myLastIndexOf");
-console.log(animals.lastIndexOf('Dodo') +       " : " + animals.myLastIndexOf('Dodo'));           // 3
-console.log(animals.lastIndexOf('Tiger') +      " : " + animals.myLastIndexOf('Tiger'));          // 1
-console.log(animals.lastIndexOf('Giraffe') +    " : " + animals.myLastIndexOf('Giraffe'));        // -1
-console.log(animals.lastIndexOf('Penguin', 2) + " : " + animals.myLastIndexOf('Penguin', 2));     // 2
-console.log(arrLstIdxTest.lastIndexOf(2) +      " : " + arrLstIdxTest.myLastIndexOf(2));          // 3
-console.log(arrLstIdxTest.lastIndexOf(7) +      " : " + arrLstIdxTest.myLastIndexOf(7));          // -1
-console.log(arrLstIdxTest.lastIndexOf(2, 3) +   " : " + arrLstIdxTest.myLastIndexOf(2, 3));       // 3
-console.log(arrLstIdxTest.lastIndexOf(2, 2) +   " : " + arrLstIdxTest.myLastIndexOf(2, 2));       // 0
-console.log(arrLstIdxTest.lastIndexOf(2, -2) +  " : " + arrLstIdxTest.myLastIndexOf(2, -2));      // 0
-console.log(arrLstIdxTest.lastIndexOf(2, -1) +  " : " + arrLstIdxTest.myLastIndexOf(2, -1));      // 3
+// console.log("lastIndexOf vs myLastIndexOf");
+// console.log(animals.lastIndexOf('Dodo') +       " : " + animals.myLastIndexOf('Dodo'));           // 3
+// console.log(animals.lastIndexOf('Tiger') +      " : " + animals.myLastIndexOf('Tiger'));          // 1
+// console.log(animals.lastIndexOf('Giraffe') +    " : " + animals.myLastIndexOf('Giraffe'));        // -1
+// console.log(animals.lastIndexOf('Penguin', 2) + " : " + animals.myLastIndexOf('Penguin', 2));     // 2
+// console.log(arrLstIdxTest.lastIndexOf(2) +      " : " + arrLstIdxTest.myLastIndexOf(2));          // 3
+// console.log(arrLstIdxTest.lastIndexOf(7) +      " : " + arrLstIdxTest.myLastIndexOf(7));          // -1
+// console.log(arrLstIdxTest.lastIndexOf(2, 3) +   " : " + arrLstIdxTest.myLastIndexOf(2, 3));       // 3
+// console.log(arrLstIdxTest.lastIndexOf(2, 2) +   " : " + arrLstIdxTest.myLastIndexOf(2, 2));       // 0
+// console.log(arrLstIdxTest.lastIndexOf(2, -2) +  " : " + arrLstIdxTest.myLastIndexOf(2, -2));      // 0
+// console.log(arrLstIdxTest.lastIndexOf(2, -1) +  " : " + arrLstIdxTest.myLastIndexOf(2, -1));      // 3
 
-console.log("/1/ Test 1: Animals + Nums /1/");
+// console.log("/1/ Test 1: Animals + Nums /1/");
 
-console.log("/// lastIndexOf vs myLastIndexOf ///");
+// console.log("/// lastIndexOf vs myLastIndexOf ///");
 
 
 
 // KEYS TESTS //
+console.log("/// values vs grabValues ///");
 
+// Test 1: Values
+console.log("/1/ Test 1: Values /1/");
+
+const val1 = { a: 'somestring', b: 42, c: false};
+const val2 = { foo: 'bar', baz: 42 };
+const arrVal1 = { 0: 'a', 1: 'b', 2: 'c' };
+const arrVal2 = { 100: 'a', 2: 'b', 7: 'c' };
+const val3 = Object.create({}, { getFoo: { value: function () { return this.foo; } } });
+val3.foo = 'bar';
+
+console.log("values ||| grabValues");
+console.log(Object.values(val1) +       " | " + Object.grabValues(val1));       // ["somestring", 42, false]
+console.log(Object.values(val2) +       " | " + Object.grabValues(val2));       // ['bar', 42]
+console.log(Object.values(arrVal1) +    " | " + Object.grabValues(arrVal1));    // ['a', 'b', 'c']
+console.log(Object.values(arrVal2) +    " | " + Object.grabValues(arrVal2));    // ['b', 'c', 'a']
+console.log(Object.values(val3) +       " | " + Object.grabValues(val3));       // ['bar']
+console.log(Object.values('foo') +      " | " + Object.grabValues('foo'));      // ['f', 'o', 'o']
+
+console.log("/1/ Test 1: Values /1/");
+
+console.log("/// values vs grabValues ///");
 
 
 // VALUES TESTS //
