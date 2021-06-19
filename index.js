@@ -89,11 +89,11 @@ Array.prototype.myReduce = function (callbackFn, initialValue) {
 
     // Checking if initialValue is provided
     if (inVal) {
-        if(totalElements>1){
+        if (totalElements > 1) {
             startIndex += elementIndices[1];
-        console.log("sI: " + startIndex);
+            console.log("sI: " + startIndex);
         }
-        
+
         total += this[elementIndices[0]];
     } else {
         total += initialValue;
@@ -120,8 +120,33 @@ Array.prototype.myReduce = function (callbackFn, initialValue) {
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function () {
+Array.prototype.myIncludes = function (searchElement, fromIndex) {
+    let startIndex = 0;
 
+    // Check if fromIndex is provided
+    if (fromIndex !== undefined) {
+        if (fromIndex >= this.length) {
+            return false;
+        }
+
+        if (fromIndex < 0) {
+            startIndex = this.length + fromIndex;
+
+            if (startIndex <= -1 * this.length) {
+                startIndex = 0;
+            }
+        } else {
+            startIndex += fromIndex;
+        }
+    }
+
+    for (let i = startIndex; i < this.length; i++) {
+        if (this[i] === searchElement) {
+            return true;
+        }
+    }
+
+    return false;
 };
 
 // INDEXOF //
